@@ -1,6 +1,6 @@
 {
-  "name": "vi_package_template",
-  "version": "1.0.2",
+  "name": "vienvmgr",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,35 +9,35 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Vishota/package_template.git"
+    "url": "git+https://github.com/Vishota/envmgr.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Vishota/package_template/issues"
+    "url": "https://github.com/Vishota/envmgr/issues"
   },
-  "homepage": "https://github.com/Vishota/package_template#readme",
+  "homepage": "https://github.com/Vishota/envmgr#readme",
   "devDependencies": {
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "@types/node": "^20.6.0"
+    "@types/node": "^20.11.10"
   },
   "typesVersions": {
     ">=4.2": {
       "*": [
-        "_types/*"
+        "_types/envmgr.d.ts"
       ]
     }
   },
   "types": "./index.d.ts",
   "exports": {
-    "./*": {
-      "types": "./_types/*.d.ts",
-      "require": "./_cjs/*.js",
-      "import": "./_esm/*.js",
-      "default": "./_esm/*.js"
+    ".": {
+      "types": "./_types/envmgr.d.ts",
+      "require": "./_cjs/envmgr.js",
+      "import": "./_esm/envmgr.js",
+      "default": "./_esm/envmgr.js"
     }
   }
 }
