@@ -1,10 +1,10 @@
 export default class Envmgr<T extends string> {
     private _envDescriptions;
-    constructor(envDescriptions: Record<T, EnvDescription>);
-    get(varname: T): string | undefined;
+    constructor(envDescriptions: Record<T, EnvDescription<any>>);
+    get(varname: T): any;
 }
-type EnvDescription = {
-    notfound: 'error' | 'warning' | 'default';
-    default?: string;
+type EnvDescription<T extends string | undefined> = {
+    notfound?: 'error' | 'warning' | 'default';
+    default: T;
 };
 export {};

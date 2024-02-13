@@ -7,6 +7,8 @@ class Envmgr {
     get(varname) {
         var _a, _b;
         const value = process.env[varname];
+        if (value)
+            return value;
         if (this._envDescriptions[varname] === undefined) {
             console.warn(`[ENVMGR] {${varname}} non-described env value used`);
         }
@@ -18,7 +20,7 @@ class Envmgr {
             console.warn(`[ENVMGR] {${varname}} desired value is not set`);
             return this._envDescriptions[varname].default;
         }
-        return value || this._envDescriptions[varname].default;
+        return this._envDescriptions[varname].default;
     }
 }
 exports.default = Envmgr;
